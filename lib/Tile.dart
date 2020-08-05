@@ -3,8 +3,9 @@ part of not_scrabble;
 abstract class Tile {
 
 	int tileCoordinate;
+	Premium premium;
 
-	Tile(int tileCoordinate) {
+	Tile(int tileCoordinate, Premium premium) {
 		this.tileCoordinate=tileCoordinate;
 	}
 
@@ -14,7 +15,7 @@ abstract class Tile {
 
 class EmptyTile extends Tile {
 
-	EmptyTile(int tileCoordinate) : super(tileCoordinate);
+	EmptyTile(int tileCoordinate, Premium premium) : super(tileCoordinate, premium);
 
   	@override
   	bool isTileOccupied() {
@@ -26,7 +27,7 @@ class OccupiedTile extends Tile {
 
 	Piece piece;
 
-	OccupiedTile(int tileCoordinate, Piece piece) : super(tileCoordinate) {
+	OccupiedTile(int tileCoordinate, Premium premium, Piece piece) : super(tileCoordinate, premium) {
 		this.piece=piece;
 	}
 
