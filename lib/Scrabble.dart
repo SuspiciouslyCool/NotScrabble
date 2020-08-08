@@ -3,7 +3,7 @@ part of not_scrabble;
 class Scrabble {
 
 	static List<Piece> globalBag = new List<Piece>(100);
-	List<Tile> board;
+	Board board;
 	List<Player> players = new List<Player>(4);
 	int currentPlayer=0;
 
@@ -11,10 +11,7 @@ class Scrabble {
 		// Generate Bag
 		Scrabble.globalBag=ScrabbleUtils.generateBag(lang);
 		
-		// Generate Board
-		for(int i=0; i<225; i++) {
-			this.board.add(new EmptyTile(i));
-		}
+		this.board=new Board();
 
 		// Generate Players
 		for(int i=0; i<humanPlayers; i++) {

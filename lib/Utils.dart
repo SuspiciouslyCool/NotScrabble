@@ -15,4 +15,8 @@ class ScrabbleUtils {
 		}
 		return pieceList..shuffle();
 	}
+
+	static List<Piece> getNewPlayerBag() {
+		return Scrabble.getGlobalBag().sublist(0,7);
+	}
 }
