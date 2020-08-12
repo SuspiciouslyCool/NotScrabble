@@ -1,6 +1,6 @@
 part of not_scrabble;
 
-class NotScrabbleUtils {
+class Utils {
 
 	static List<Piece> generateBag(String lang) {
 		File file = new File("./lang/$lang.json");
@@ -17,7 +17,7 @@ class NotScrabbleUtils {
 	}
 
 	static List<Piece> getNewPlayerBag() {
-		return Scrabble.getGlobalBag().sublist(0,7);
+		return NotScrabble.getGlobalBag().sublist(0,7);
 	}
 
 	static isLegalTile(int tileCoordinate) {
@@ -43,7 +43,7 @@ class NotScrabbleUtils {
 					continue;
 				}
 
-				OccupiedTile candidateTile = Scrabble.board.getTile(candidateCoordinate);
+				OccupiedTile candidateTile = NotScrabble.board.getTile(candidateCoordinate);
 				while(!candidateTile.isTileOccupied()) {
 					
 					if(!visited.contains(candidateTile)) {
@@ -73,7 +73,7 @@ class NotScrabbleUtils {
 					}
 					index++;
 					candidateCoordinate = tile.tileCoordinate+directionOffset*index;
-					candidateTile = Scrabble.board.getTile(candidateCoordinate);
+					candidateTile = NotScrabble.board.getTile(candidateCoordinate);
 				}
 				totalScore+=wordScore*premiumModifier;
 			}

@@ -4,9 +4,9 @@ import 'dart:convert';
 import 'dart:io';
 
 part 'Piece.dart';
-part 'Scrabble.dart';
+part 'NotScrabble.dart';
 part 'Tile.dart';
 part 'Premium.dart';
-part 'NotScrabbleUtils.dart';
+part 'Utils.dart';
 part 'Player.dart';
 part 'Board.dart';
