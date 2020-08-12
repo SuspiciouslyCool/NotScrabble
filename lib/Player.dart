@@ -9,17 +9,17 @@ abstract class Player {
 
 	Player(int id) {
 		this.id=id;
-		this.bag=ScrabbleUtils.getNewPlayerBag();
+		this.bag=NotScrabbleUtils.getNewPlayerBag();
 		Scrabble.getGlobalBag().removeRange(0,7);
 		this.score=0;
 	}
 
 	makeMove() {
-		//TODO: 
-		// Calculate points
+		this.score = NotScrabbleUtils.calculatePoints(this.move);
 
-		this.bag=ScrabbleUtils.getNewPlayerBag();
+		this.bag=NotScrabbleUtils.getNewPlayerBag();
 		this.move.clear();
+		Scrabble.endTurn();
 	}
 }
 
